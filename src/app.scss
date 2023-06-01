@@ -44,6 +44,11 @@ ul {
     display: table-cell;
     text-align: center;
     background-color: greenyellow;
+    &:hover {
+      color: white;
+      text-decoration: underline;
+      background-color: darkgreen;
+    }
   }
   
   .mid-rightSide{
@@ -51,5 +56,10 @@ ul {
     display: table-cell;
     text-align: center;
     background-color: red;
+    &:hover {
+      color: white;
+      text-decoration: underline;
+      background-color: darkred;
+    }
   }
 }
