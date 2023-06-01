@@ -1,0 +1,55 @@
+.header {
+  background-color: rgb(174, 130, 73);
+  margin: 0 10rem;
+  padding: 30px;
+  color: white;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 10px solid black;
+}
+
+ul {
+  display: table;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: table-cell;
+    text-align: center;
+
+    a {
+      text-decoration: none;
+      font-size: 40px;
+      color: wheat;
+
+      &:hover {
+        color: white;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.mid-div {
+  display: table;
+  background-color: aqua;
+  height: calc(100vh - 120px);
+  width: 100%;
+  
+  .mid-leftSide{
+    height: 100%;
+    display: table-cell;
+    text-align: center;
+    background-color: greenyellow;
+  }
+  
+  .mid-rightSide{
+    height: 100%;
+    display: table-cell;
+    text-align: center;
+    background-color: red;
+  }
+}
