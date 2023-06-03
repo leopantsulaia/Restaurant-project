@@ -1,7 +1,8 @@
 // MyComponent.js
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import Creation from "./Creation.jsx";
 import Tables from "./Tables";
+import './main.scss'
 
 function MyComponent(props) {
   const [showCreation, setShowCreation] = useState(false);
@@ -11,17 +12,39 @@ function MyComponent(props) {
     <>
       {!showCreation && !showTables && (
         <>
-          <aside
-            className='mid-leftSide'
-            onClick={() => setShowCreation(true)}
-          >
-            Create Table
+          <aside className='mid-leftSide'>
+            <button
+              onClick={() => setShowCreation(true)}
+              className='create-table-btn'
+            >
+              Create Table
+            </button>
           </aside>
-          <aside
-            className='mid-rightSide'
-            onClick={() => setShowTables(true)}
-          >
-            Tables Now
+          <aside className='mid-rightSide'>
+            <button
+              onClick={() => setShowTables(true)}
+              className='create-table-btn'
+            >
+              Tables Now
+            </button>
+            <button
+              onClick={() => setShowTables(true)}
+              className='create-table-btn'
+            >
+              Tables Now
+            </button>
+            <button
+              onClick={() => setShowTables(true)}
+              className='create-table-btn'
+            >
+              Tables Now
+            </button>
+            <button
+              onClick={() => setShowTables(true)}
+              className='create-table-btn'
+            >
+              Tables Now
+            </button>
           </aside>
         </>
       )}

@@ -1,0 +1,50 @@
+.Creation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: calc(100vh - 120px);
+
+  .nav-tables {
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    // flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    // align-content: space-around;
+
+    #btn-one {
+      order: 1;
+      margin: auto;
+      width: 200px;
+      height: 200px;
+      background-color: green;
+    }
+
+    #btn-two {
+      order: 2;
+      margin: auto;
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+
+    #btn-three {
+      order: 3;
+      margin: auto;
+      width: 200px;
+      height: 200px;
+      background-color: blue;
+    }
+
+    #btn-four {
+      order: 4;
+      margin: auto;
+      width: 200px;
+      height: 200px;
+      background-color: yellow;
+    }
+  }
+}
