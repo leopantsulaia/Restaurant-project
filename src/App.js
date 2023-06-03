@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import "./app.scss";
-import Creation from "./components/JS/Creation.jsx";
-import Tables from "./components/JS/Tables";
+import MyComponent from "./components/JS/MyComponent";
 
 function App() {
-  const [showCreation, setShowCreation] = useState(false);
-  const [showTables, setShowTables] = useState(false);
 
   return (
     <div className='App'>
@@ -23,24 +20,7 @@ function App() {
         </ul>
       </header>
       <div className='mid-div'>
-        {!showCreation && !showTables && (
-          <>
-            <aside
-              className='mid-leftSide'
-              onClick={() => setShowCreation(true)}
-            >
-              Create Table
-            </aside>
-            <aside
-              className='mid-rightSide'
-              onClick={() => setShowTables(true)}
-            >
-              Tables Now
-            </aside>
-          </>
-        )}
-        {showCreation &&  <Creation />}
-        {showTables && <Tables />}
+        <MyComponent />
       </div>
     </div>
   );
