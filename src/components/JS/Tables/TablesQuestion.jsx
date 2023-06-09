@@ -1,11 +1,13 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import the useNavigate hook
 
-const TableQuestions = ({dataFood, dataDrink, title, onSave}) => {
+const TableQuestions = ({ dataFood, dataDrink, title, onSave }) => {
   const [selectedFood, setSelectedFood] = useState({});
   const [selectedDrink, setSelectedDrink] = useState({});
+  const navigate = useNavigate(); // Use the useNavigate hook to get a navigate function
 
   const handleFoodCheckboxChange = (event) => {
-    const {name} = event.target;
+    const { name } = event.target;
     setSelectedFood((prevSelectedFood) => ({
       ...prevSelectedFood,
       [name]: prevSelectedFood[name] ? 0 : 1,
@@ -13,7 +15,7 @@ const TableQuestions = ({dataFood, dataDrink, title, onSave}) => {
   };
 
   const handleFoodQuantityChange = (event) => {
-    const {name, value} = event.target;
+    const { name, value } = event.target;
     setSelectedFood((prevSelectedFood) => ({
       ...prevSelectedFood,
       [name]: Number(value),
@@ -21,7 +23,7 @@ const TableQuestions = ({dataFood, dataDrink, title, onSave}) => {
   };
 
   const handleDrinkCheckboxChange = (event) => {
-    const {name} = event.target;
+    const { name } = event.target;
     setSelectedDrink((prevSelectedDrink) => ({
       ...prevSelectedDrink,
       [name]: prevSelectedDrink[name] ? 0 : 1,
@@ -29,7 +31,7 @@ const TableQuestions = ({dataFood, dataDrink, title, onSave}) => {
   };
 
   const handleDrinkQuantityChange = (event) => {
-    const {name, value} = event.target;
+    const { name, value } = event.target;
     setSelectedDrink((prevSelectedDrink) => ({
       ...prevSelectedDrink,
       [name]: Number(value),
@@ -40,6 +42,7 @@ const TableQuestions = ({dataFood, dataDrink, title, onSave}) => {
     if (onSave) {
       onSave(selectedFood, selectedDrink);
     }
+    navigate("/Magidebi"); // Navigate to the /Magidebi page when the "Save" button is clicked
   };
 
   return (
@@ -52,9 +55,21 @@ const TableQuestions = ({dataFood, dataDrink, title, onSave}) => {
           .map((item) => (
             <li key={item.title}>
               <label>
-                <input type='checkbox' name={item.title} onChange={handleDrinkCheckboxChange} checked={selectedDrink[item.title] > 0} />
+                <input
+                  type="checkbox"
+                  name={item.title}
+                  onChange={handleDrinkCheckboxChange}
+                  checked={selectedDrink[item.title] > 0}
+                />
                 {item.title}
-                {selectedDrink[item.title] > 0 && <input type='number' name={item.title} onChange={handleDrinkQuantityChange} value={selectedDrink[item.title] || 0} />}
+                {selectedDrink[item.title] > 0 && (
+                  <input
+                    type="number"
+                    name={item.title}
+                    onChange={handleDrinkQuantityChange}
+                    value={selectedDrink[item.title] || 0}
+                  />
+                )}
               </label>
             </li>
           ))}
@@ -66,9 +81,21 @@ const TableQuestions = ({dataFood, dataDrink, title, onSave}) => {
           .map((item) => (
             <li key={item.title}>
               <label>
-                <input type='checkbox' name={item.title} onChange={handleFoodCheckboxChange} checked={selectedFood[item.title] > 0} />
+                <input
+                  type="checkbox"
+                  name={item.title}
+                  onChange={handleFoodCheckboxChange}
+                  checked={selectedFood[item.title] > 0}
+                />
                 {item.title}
-                {selectedFood[item.title] > 0 && <input type='number' name={item.title} onChange={handleFoodQuantityChange} value={selectedFood[item.title] || 0} />}
+                {selectedFood[item.title] > 0 && (
+                  <input
+                    type="number"
+                    name={item.title}
+                    onChange={handleFoodQuantityChange}
+                    value={selectedFood[item.title] || 0}
+                  />
+                )}
               </label>
             </li>
           ))}
