@@ -1,4 +1,3 @@
-// MyComponent.js
 import React, { useState } from "react";
 import Creation from "./Creation.jsx";
 import Tables from "./Tables";

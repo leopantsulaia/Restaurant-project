@@ -1,4 +1,5 @@
 import React from "react";
+import {BrowserRouter as Router} from "react-router-dom";
 import "./app.scss";
 import MyComponent from "./components/JS/MyComponent";
 
@@ -19,7 +20,9 @@ function App() {
         </ul>
       </header>
       <div className='mid-div'>
-        <MyComponent />
+        <Router>
+          <MyComponent />
+        </Router>
       </div>
     </div>
   );
