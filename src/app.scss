@@ -1,0 +1,92 @@
+.App {
+  .header {
+    background-color: rgb(174, 130, 73);
+    margin: 0 10rem;
+    padding: 30px;
+    color: white;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 10px solid black;
+    ul {
+      display: table;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: table-cell;
+        text-align: center;
+
+        a {
+          text-decoration: none;
+          font-size: 40px;
+          color: wheat;
+
+          &:hover {
+            color: white;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  .mid-div {
+    display: table;
+    background-color: antiquewhite;
+    height: calc(100vh - 120px);
+    width: 100%;
+
+    .mid-leftSide {
+      height: 100%;
+      display: table-cell;
+      text-align: center;
+      background-color: greenyellow;
+      z-index: 1;
+      width: 50%;
+      &:hover {
+        color: white;
+        text-decoration: underline;
+        background-color: darkgreen;
+      }
+      .create-table-btn {
+        width: 40vh;
+        height: 40vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(0%, 50%);
+        text-align: center;
+        &:hover {
+          background-color: magenta;
+        }
+      }
+    }
+
+    .mid-rightSide {
+      height: 100%;
+      display: table-cell;
+      text-align: center;
+      background-color: red;
+      z-index: 2;
+      width: 50%;
+      &:hover {
+        color: white;
+        text-decoration: underline;
+        background-color: darkred;
+      }
+      .create-table-btn {
+        width: 40vh;
+        height: 40vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(0%, 10%);
+        text-align: center;
+        &:hover {
+          background-color: magenta;
+        }
+      }
+    }
+  }
+}

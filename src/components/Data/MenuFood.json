@@ -1,0 +1,69 @@
+{
+  "Pizza": [
+    {
+      "title": "Cheese Pizza",
+      "price": "30gel",
+      "tags": "100ml"
+    },
+    {
+      "title": "Veggie Pizza",
+      "price": "20gel",
+      "tags": "100ml"
+    },
+    {
+      "title": "Margherita ",
+      "price": "20gel",
+      "tags": "100ml"
+    },
+    {
+      "title": "BBQ Chicken",
+      "price": "30gel",
+      "tags": "30ml"
+    },
+    {
+      "title": "Pepperoni ",
+      "price": "100000EUR",
+      "tags": "100000L"
+    }
+  ],
+
+  "Soup": [
+    {
+      "title": "Chicken Noodle Soup",
+      "price": "3gel",
+      "tags": "500ml"
+    },
+    {
+      "title": "Italian Wedding Soup",
+      "price": "3gel",
+      "tags": "500ml"
+    },
+    {
+      "title": "New England Clam Chowder",
+      "price": "3gel",
+      "tags": "500ml"
+    },
+    {
+      "title": "Kharcho",
+      "price": "7gel",
+      "tags": "300ml"
+    }
+  ],
+  "Khinkali": [
+    {
+      "title": "Mtiuliri",
+      "price": "5gel",
+      "tags": "100ml"
+    },
+    {
+      "title": "Moxevuri",
+      "price": "4gel",
+      "tags": "100ml"
+    },
+    {
+      "title": "OxraxushiComshi",
+      "price": "5gel",
+      "tags": "100ml"
+    }
+  ]
+}

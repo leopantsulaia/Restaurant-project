@@ -1,0 +1,69 @@
+{
+  "alcohol": [
+    {
+      "title": "Saferavi",
+      "price": "30gel",
+      "tags": "100ml"
+    },
+    {
+      "title": "Qindzmarauli",
+      "price": "20gel",
+      "tags": "100ml"
+    },
+    {
+      "title": "Tavkveri",
+      "price": "20gel",
+      "tags": "100ml"
+    },
+    {
+      "title": "Irish Whiskey",
+      "price": "30gel",
+      "tags": "30ml"
+    },
+    {
+      "title": "Black Guinness",
+      "price": "100000EUR",
+      "tags": "100000L"
+    }
+  ],
+
+  "lemonade": [
+    {
+      "title": "Coca Cola",
+      "price": "3gel",
+      "tags": "500ml"
+    },
+    {
+      "title": "Fanta",
+      "price": "3gel",
+      "tags": "500ml"
+    },
+    {
+      "title": "Sprite",
+      "price": "3gel",
+      "tags": "500ml"
+    },
+    {
+      "title": "Red Bull",
+      "price": "7gel",
+      "tags": "300ml"
+    }
+  ],
+  "other": [
+    {
+      "title": "coffee",
+      "price": "5gel",
+      "tags": "100ml"
+    },
+    {
+      "title": "black tea",
+      "price": "4gel",
+      "tags": "100ml"
+    },
+    {
+      "title": "fruit tea",
+      "price": "5gel",
+      "tags": "100ml"
+    }
+  ]
+}
