@@ -1,38 +1,41 @@
-import React from "react";
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import "./app.scss";
-import MyComponent from "./components/JS/MyComponent";
-import Magidebi from "./components/JS/Logic/Magidebi"; // Import the Magidebi component
-import {SaveTappedProvider} from "./components/JS/Logic/SaveTapped";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import './app.scss';
+import MyComponent from './components/JS/MyComponent';
+import Tables from './components/JS/Logic/Tables';
+import { SaveTappedProvider } from './components/JS/Logic/SaveTapped';
+import About from './components/JS/Tables/About'
 
 function App() {
   return (
     <SaveTappedProvider>
-      <div className='App'>
-        <header className='header'>
-          <ul className='header-items'>
-            <li>
-              <a href='./'> Home </a>
-            </li>
-            <li>
-              <a href='./magidebi'>Magidebi</a>{" "}
-            </li>
-            <li>
-              <a href='./about'>about</a>
-            </li>
-          </ul>
-        </header>
-        <div className='mid-div'>
-          <Router>
-            {/* Wrap your Route components inside a Routes component */}
+      <Router>
+        <div className='App'>
+          <header className='header'>
+            <nav>
+              <ul className='header-items'>
+                <li>
+                  <Link to='/Home'>Home</Link>
+                </li>
+                <li>
+                  <Link to='/Tables'>Tables</Link>
+                </li>
+                <li>
+                  <Link to='/about'>About</Link>
+                </li>
+              </ul>
+            </nav>
+          </header>
+          <div className='mid-div'>
             <Routes>
-              {/* Use the element prop to specify the component to render for this route */}
-              <Route path='/Magidebi' element={<Magidebi />} />
+              <Route path='/Home' element={<MyComponent />} />
+              <Route path='/Home/:tableNumber' element={<MyComponent />} />
+              <Route path='/Tables' element={<Tables />} />
+              <Route path='/About' element={<About />} />
             </Routes>
-            <MyComponent />
-          </Router>
+          </div>
         </div>
-      </div>
+      </Router>
     </SaveTappedProvider>
   );
 }
