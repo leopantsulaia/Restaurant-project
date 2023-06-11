@@ -1,4 +1,3 @@
-// TableSave.jsx
 import React, { useContext } from "react";
 import TableQuestions from "./TablesQuestion";
 import dataFood from "../../Data/MenuDrink.json";

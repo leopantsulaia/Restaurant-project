@@ -29,6 +29,7 @@ function App() {
           <div className='mid-div'>
             <Routes>
               <Route path='/Home' element={<MyComponent />} />
+              <Route path='/' element={<MyComponent />} />
               <Route path='/Home/:tableNumber' element={<MyComponent />} />
               <Route path='/Tables' element={<Tables />} />
               <Route path='/About' element={<About />} />
