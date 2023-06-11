@@ -1,46 +1,33 @@
 import React, {useState} from "react";
-import Creation from "./Creation.jsx";
-import Tables from "./Tables";
-import TableOne from "../JS/Tables/TableOne.jsx"; // Import the TableOne component
-import "./main.scss";
+import TableSave from "../JS/Tables/TableSave.jsx";
 
-function MyComponent(props) {
-  const [showCreation, setShowCreation] = useState(false);
-  const [showTables, setShowTables] = useState(false);
-  const [showTable, setShowTable] = useState(null); // Add a new state variable to keep track of which table component should be displayed
+const MyComponent = () => {
+  const [selectedTable, setSelectedTable] = useState(null);
 
   return (
-    <>
-      {!showCreation && !showTables && !showTable && (
+    <aside className='mid-rightSide'>
+      {!selectedTable && (
         <>
-          <aside className='mid-leftSide'>
-            <button onClick={() => setShowCreation(true)} className='create-table-btn'>
-              Create Table
-            </button>
-          </aside>
-          <aside className='mid-rightSide'>
-            <button
-              onClick={() => setShowTable("TableOne")} // Update the onClick prop of the first button to set showTable to "TableOne" when clicked
-              className='create-table-btn'>
-              Tables Now
-            </button>
-            <button onClick={() => setShowTables(true)} className='create-table-btn'>
-              Tables Now
-            </button>
-            <button onClick={() => setShowTables(true)} className='create-table-btn'>
-              Tables Now
-            </button>
-            <button onClick={() => setShowTables(true)} className='create-table-btn'>
-              Tables Now
-            </button>
-          </aside>
+          <button onClick={() => setSelectedTable(1)} className='create-table-btn'>
+            Table One
+          </button>
+          <button onClick={() => setSelectedTable(2)} className='create-table-btn'>
+            Table Two
+          </button>
+          <button onClick={() => setSelectedTable(3)} className='create-table-btn'>
+            Table Three
+          </button>
+          <button onClick={() => setSelectedTable(4)} className='create-table-btn'>
+            Table Four
+          </button>
         </>
       )}
-      {showCreation && <Creation />}
-      {showTables && <Tables />}
-      {showTable === "TableOne" && <TableOne />} {/* Render the TableOne component if showTable is "TableOne" */}
-    </>
+      {selectedTable === 1 && <TableSave id='table-one' title='Table One' tableNumber={1} />}
+      {selectedTable === 2 && <TableSave id='table-two' title='Table Two' tableNumber={2} />}
+      {selectedTable === 3 && <TableSave id='table-three' title='Table Three' tableNumber={3} />}
+      {selectedTable === 4 && <TableSave id='table-four' title='Table Four' tableNumber={4} />}
+    </aside>
   );
-}
+};
 
 export default MyComponent;
