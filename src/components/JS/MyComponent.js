@@ -3,22 +3,23 @@ import TableSave from "../JS/Tables/TableSave.jsx";
 
 const MyComponent = () => {
   const [selectedTable, setSelectedTable] = useState(null);
+  
 
   return (
     <aside className='mid-rightSide'>
       {!selectedTable && (
         <>
           <button onClick={() => setSelectedTable(1)} className='create-table-btn'>
-            Table One
+            Table 1
           </button>
           <button onClick={() => setSelectedTable(2)} className='create-table-btn'>
-            Table Two
+            Table 2
           </button>
           <button onClick={() => setSelectedTable(3)} className='create-table-btn'>
-            Table Three
+            Table 3
           </button>
           <button onClick={() => setSelectedTable(4)} className='create-table-btn'>
-            Table Four
+            Table 4
           </button>
         </>
       )}

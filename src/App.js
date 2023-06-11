@@ -1,9 +1,10 @@
-import React from "react";
-import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
-import "./app.scss";
-import MyComponent from "./components/JS/MyComponent";
-import Tables from "./components/JS/Logic/Tables";
-import {SaveTappedProvider} from "./components/JS/Logic/SaveTapped";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import './app.scss';
+import MyComponent from './components/JS/MyComponent';
+import Tables from './components/JS/Logic/Tables';
+import { SaveTappedProvider } from './components/JS/Logic/SaveTapped';
+import About from './components/JS/Tables/About'
 
 function App() {
   return (
@@ -27,8 +28,10 @@ function App() {
           </header>
           <div className='mid-div'>
             <Routes>
-              <Route path='/Home' element={<MyComponent />} /> {/* Add this line */}
+              <Route path='/Home' element={<MyComponent />} />
+              <Route path='/Home/:tableNumber' element={<MyComponent />} />
               <Route path='/Tables' element={<Tables />} />
+              <Route path='/About' element={<About />} />
             </Routes>
           </div>
         </div>

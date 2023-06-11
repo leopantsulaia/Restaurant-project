@@ -7,6 +7,3 @@ export const SaveTappedProvider = ({children}) => {
 
   return <SaveTappedContext.Provider value={{saveTapped, setSaveTapped}}>{children}</SaveTappedContext.Provider>;
 };
-
-
-

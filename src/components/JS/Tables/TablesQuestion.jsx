@@ -1,10 +1,12 @@
 import React, {useState} from "react";
-import {useNavigate} from "react-router-dom"; // Import the useNavigate hook
+import {useNavigate} from "react-router-dom";
+import './Questions.scss'
 
 const TableQuestions = ({dataFood, dataDrink, title, onSave}) => {
   const [selectedFood, setSelectedFood] = useState({});
   const [selectedDrink, setSelectedDrink] = useState({});
-  const navigate = useNavigate(); // Use the useNavigate hook to get a navigate function
+  const [showFood, setShowFood] = useState(true);
+  const navigate = useNavigate();
 
   const handleFoodCheckboxChange = (event) => {
     const {name} = event.target;
@@ -38,6 +40,10 @@ const TableQuestions = ({dataFood, dataDrink, title, onSave}) => {
     }));
   };
 
+  const handleNext = () => {
+    setShowFood(false);
+  };
+
   const handleSave = () => {
     if (onSave) {
       onSave(selectedFood, selectedDrink);
@@ -46,37 +52,45 @@ const TableQuestions = ({dataFood, dataDrink, title, onSave}) => {
   };
 
   return (
-    <div>
+    <div className='table-questions'>
       <h1>{title}</h1>
-      <h2>Food</h2>
-      <ul>
-        {Object.values(dataDrink)
-          .flat()
-          .map((item) => (
-            <li key={item.title}>
-              <label>
-                <input type='checkbox' name={item.title} onChange={handleDrinkCheckboxChange} checked={selectedDrink[item.title] > 0} />
-                {item.title}
-                {selectedDrink[item.title] > 0 && <input type='number' name={item.title} onChange={handleDrinkQuantityChange} value={selectedDrink[item.title] || 0} />}
-              </label>
-            </li>
-          ))}
-      </ul>
-      <h2>Drinks</h2>
-      <ul>
-        {Object.values(dataFood)
-          .flat()
-          .map((item) => (
-            <li key={item.title}>
-              <label>
-                <input type='checkbox' name={item.title} onChange={handleFoodCheckboxChange} checked={selectedFood[item.title] > 0} />
-                {item.title}
-                {selectedFood[item.title] > 0 && <input type='number' name={item.title} onChange={handleFoodQuantityChange} value={selectedFood[item.title] || 0} />}
-              </label>
-            </li>
-          ))}
-      </ul>
-      <button onClick={handleSave}>Save</button>
+      {showFood ? (
+        <>
+          <h2>Food</h2>
+          <ul>
+            {Object.values(dataDrink)
+              .flat()
+              .map((item) => (
+                <li key={item.title}>
+                  <label>
+                    <input type='checkbox' name={item.title} onChange={handleDrinkCheckboxChange} checked={selectedDrink[item.title] > 0} />
+                    {item.title}
+                    {selectedDrink[item.title] > 0 && <input type='number' name={item.title} onChange={handleDrinkQuantityChange} value={selectedDrink[item.title] || 0} />}
+                  </label>
+                </li>
+              ))}
+          </ul>
+          <button onClick={handleNext}>Next</button>
+        </>
+      ) : (
+        <>
+          <h2>Drinks</h2>
+          <ul>
+            {Object.values(dataFood)
+              .flat()
+              .map((item) => (
+                <li key={item.title}>
+                  <label>
+                    <input type='checkbox' name={item.title} onChange={handleFoodCheckboxChange} checked={selectedFood[item.title] > 0} />
+                    {item.title}
+                    {selectedFood[item.title] > 0 && <input type='number' name={item.title} onChange={handleFoodQuantityChange} value={selectedFood[item.title] || 0} />}
+                  </label>
+                </li>
+              ))}
+          </ul>
+          <button onClick={handleSave}>Save</button>
+        </>
+      )}
     </div>
   );
 };
