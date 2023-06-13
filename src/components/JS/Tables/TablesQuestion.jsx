@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
-import './Questions.scss'
+import "./Questions.scss";
 
 const TableQuestions = ({dataFood, dataDrink, title, onSave}) => {
   const [selectedFood, setSelectedFood] = useState({});

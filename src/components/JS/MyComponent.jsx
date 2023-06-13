@@ -1,9 +1,8 @@
 import React, {useState} from "react";
-import TableSave from "../JS/Tables/TableSave.jsx";
+import TableSave from "./Tables/TableSave.jsx";
 
 const MyComponent = () => {
   const [selectedTable, setSelectedTable] = useState(null);
-  
 
   return (
     <aside className='mid-rightSide'>
