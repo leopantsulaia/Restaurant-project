@@ -1,10 +1,10 @@
 import React from "react";
-import useLocalStorage from "./UseLocalStorage";
+import UseLocalStorage from "./UseLocalStorage";
 import {useNavigate} from "react-router-dom";
 import "./style.scss";
 
 const Tables = () => {
-  const [saveTapped] = useLocalStorage("saveTapped", {});
+  const [saveTapped] = UseLocalStorage("saveTapped", {});
   const navigate = useNavigate();
 
   const handleBack = () => {
