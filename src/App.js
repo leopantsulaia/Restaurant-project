@@ -5,7 +5,6 @@ import Header from "./components/header";
 import TableSelection from "./components/JS/TableSelection";
 import Tables from "./components/JS/Logic/Tables";
 import About from "./components/about";
-import UseLocalStorage from "./components/JS/Logic/UseLocalStorage";
 
 function App() {
   return (
