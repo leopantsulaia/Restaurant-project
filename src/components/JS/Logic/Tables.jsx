@@ -1,5 +1,5 @@
 import React from "react";
-import useLocalStorage from "./useLocalStorage";
+import useLocalStorage from "./UseLocalStorage";
 import {useNavigate} from "react-router-dom";
 import "./style.scss";
 

@@ -1,7 +1,9 @@
 import React, {useState} from "react";
 import TableSave from "./Tables/TableSave.jsx";
 
-const MyComponent = () => {
+import "./main.scss";
+
+const TableSelection = () => {
   const [selectedTable, setSelectedTable] = useState(null);
 
   return (
@@ -30,4 +32,4 @@ const MyComponent = () => {
   );
 };
 
-export default MyComponent;
+export default TableSelection;

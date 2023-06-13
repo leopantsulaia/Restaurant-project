@@ -1,62 +1,20 @@
-.Creation {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: calc(100vh - 120px);
-
-  .nav-tables {
-    height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
-    // flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    // align-content: space-around;
-
-    #btn-one {
-      order: 1;
-      margin: auto;
-      width: 200px;
-      height: 200px;
-      background-color: green;
-      text-align: center;
-      font-weight: bold;
-      font-size: 50px;
-    }
-
-    #btn-two {
-      order: 2;
-      margin: auto;
-      width: 200px;
-      height: 200px;
-      text-align: center;
-      background-color: red;
-      font-weight: bold;
-      font-size: 50px;
-    }
-
-    #btn-three {
-      order: 3;
-      margin: auto;
-      width: 200px;
-      height: 200px;
-      background-color: blue;
-      text-align: center;
-      font-weight: bold;
-      font-size: 50px;
-    }
-
-    #btn-four {
-      order: 4;
-      margin: auto;
-      width: 200px;
-      height: 200px;
-      background-color: yellow;
-      text-align: center;
-      font-weight: bold;
-      font-size: 50px;
-    }
-  }
+.btn {
+  order: 1;
+  margin: 40px;
+  width: 200px;
+  height: 200px;
+  background-color: green;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+}
+.btn-dlt {
+  order: 1;
+  margin: auto;
+  width: 200px;
+  height: 100px;
+  background-color: red;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
 }

@@ -3,50 +3,39 @@ import {useNavigate} from "react-router-dom";
 import "./Questions.scss";
 
 const TableQuestions = ({dataFood, dataDrink, title, onSave}) => {
-  const [selectedFood, setSelectedFood] = useState({});
-  const [selectedDrink, setSelectedDrink] = useState({});
+  const [selectedItems, setSelectedItems] = useState({ food: {}, drink: {} });
   const [showFood, setShowFood] = useState(true);
   const navigate = useNavigate();
 
-  const handleFoodCheckboxChange = (event) => {
+  const handleCheckboxChange = (event, type) => {
     const {name} = event.target;
-    setSelectedFood((prevSelectedFood) => ({
-      ...prevSelectedFood,
-      [name]: prevSelectedFood[name] ? 0 : 1,
+    setSelectedItems(prevSelectedItems => ({
+      ...prevSelectedItems,
+      [type]: {
+        ...prevSelectedItems[type],
+        [name]: prevSelectedItems[type][name] ? 0 : 1,
+      }
     }));
   };
 
-  const handleFoodQuantityChange = (event) => {
+  const handleQuantityChange = (event, type) => {
     const {name, value} = event.target;
-    setSelectedFood((prevSelectedFood) => ({
-      ...prevSelectedFood,
-      [name]: Number(value),
+    setSelectedItems(prevSelectedItems => ({
+      ...prevSelectedItems,
+      [type]: {
+        ...prevSelectedItems[type],
+        [name]: Number(value),
+      }
     }));
   };
 
-  const handleDrinkCheckboxChange = (event) => {
-    const {name} = event.target;
-    setSelectedDrink((prevSelectedDrink) => ({
-      ...prevSelectedDrink,
-      [name]: prevSelectedDrink[name] ? 0 : 1,
-    }));
-  };
-
-  const handleDrinkQuantityChange = (event) => {
-    const {name, value} = event.target;
-    setSelectedDrink((prevSelectedDrink) => ({
-      ...prevSelectedDrink,
-      [name]: Number(value),
-    }));
-  };
-
-  const handleNext = () => {
+  const showDrinkSelection = () => {
     setShowFood(false);
   };
 
   const handleSave = () => {
     if (onSave) {
-      onSave(selectedFood, selectedDrink);
+      onSave(selectedItems.food, selectedItems.drink);
     }
     navigate("/Tables");
   };
@@ -63,14 +52,14 @@ const TableQuestions = ({dataFood, dataDrink, title, onSave}) => {
               .map((item) => (
                 <li key={item.title}>
                   <label>
-                    <input type='checkbox' name={item.title} onChange={handleDrinkCheckboxChange} checked={selectedDrink[item.title] > 0} />
+                    <input type='checkbox' name={item.title} onChange={(e) => handleCheckboxChange(e, 'drink')} checked={selectedItems.drink[item.title] > 0} />
                     {item.title}
-                    {selectedDrink[item.title] > 0 && <input type='number' name={item.title} onChange={handleDrinkQuantityChange} value={selectedDrink[item.title] || 0} />}
+                    {selectedItems.drink[item.title] > 0 && <input type='number' name={item.title} onChange={(e) => handleQuantityChange(e, 'drink')} value={selectedItems.drink[item.title] || 0} />}
                   </label>
                 </li>
               ))}
           </ul>
-          <button onClick={handleNext}>Next</button>
+          <button onClick={showDrinkSelection}>Next</button>
         </>
       ) : (
         <>
@@ -81,9 +70,9 @@ const TableQuestions = ({dataFood, dataDrink, title, onSave}) => {
               .map((item) => (
                 <li key={item.title}>
                   <label>
-                    <input type='checkbox' name={item.title} onChange={handleFoodCheckboxChange} checked={selectedFood[item.title] > 0} />
+                    <input type='checkbox' name={item.title} onChange={(e) => handleCheckboxChange(e, 'food')} checked={selectedItems.food[item.title] > 0} />
                     {item.title}
-                    {selectedFood[item.title] > 0 && <input type='number' name={item.title} onChange={handleFoodQuantityChange} value={selectedFood[item.title] || 0} />}
+                    {selectedItems.food[item.title] > 0 && <input type='number' name={item.title} onChange={(e) => handleQuantityChange(e, 'food')} value={selectedItems.food[item.title] || 0} />}
                   </label>
                 </li>
               ))}
