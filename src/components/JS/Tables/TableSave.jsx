@@ -2,7 +2,7 @@ import React from "react";
 import TableQuestions from "./TablesQuestion";
 import dataFood from "../../Data/MenuDrink.json";
 import dataDrink from "../../Data/MenuFood.json";
-import useLocalStorage from "../Logic/UseLocalStorage";
+import useLocalStorage from "../../UseLocalStorage";
 
 const TableSave = ({id, title, tableNumber}) => {
   const [saveTapped, setSaveTapped] = useLocalStorage("saveTapped", {});
