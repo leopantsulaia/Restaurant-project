@@ -8,20 +8,20 @@ import About from "./components/about";
 
 function App() {
   return (
-      <Router>
-        <div className='App'>
-          <Header />
-          <div className='mid-div'>
-            <Routes>
-              <Route path='/home' element={<TableSelection />} />
-              <Route path='/' element={<TableSelection />} />
-              <Route path='/home/:tableNumber' element={<TableSelection />} />
-              <Route path='/tables' element={<Tables />} />
-              <Route path='/about' element={<About />} />
-            </Routes>
-          </div>
+    <Router>
+      <div className='App'>
+        <Header />
+        <div className='mid-div'>
+          <Routes>
+            <Route path='/home' element={<TableSelection />} />
+            <Route path='/' element={<TableSelection />} />
+            <Route path='/home/:tableNumber' element={<TableSelection />} />
+            <Route path='/tables' element={<Tables />} />
+            <Route path='/about' element={<About />} />
+          </Routes>
         </div>
-      </Router>
+      </div>
+    </Router>
   );
 }
 

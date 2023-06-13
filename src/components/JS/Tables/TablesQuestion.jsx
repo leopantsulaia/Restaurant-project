@@ -3,29 +3,29 @@ import {useNavigate} from "react-router-dom";
 import "./Questions.scss";
 
 const TableQuestions = ({dataFood, dataDrink, title, onSave}) => {
-  const [selectedItems, setSelectedItems] = useState({ food: {}, drink: {} });
+  const [selectedItems, setSelectedItems] = useState({food: {}, drink: {}});
   const [showFood, setShowFood] = useState(true);
   const navigate = useNavigate();
 
   const handleCheckboxChange = (event, type) => {
     const {name} = event.target;
-    setSelectedItems(prevSelectedItems => ({
+    setSelectedItems((prevSelectedItems) => ({
       ...prevSelectedItems,
       [type]: {
         ...prevSelectedItems[type],
         [name]: prevSelectedItems[type][name] ? 0 : 1,
-      }
+      },
     }));
   };
 
   const handleQuantityChange = (event, type) => {
     const {name, value} = event.target;
-    setSelectedItems(prevSelectedItems => ({
+    setSelectedItems((prevSelectedItems) => ({
       ...prevSelectedItems,
       [type]: {
         ...prevSelectedItems[type],
         [name]: Number(value),
-      }
+      },
     }));
   };
 
@@ -52,9 +52,9 @@ const TableQuestions = ({dataFood, dataDrink, title, onSave}) => {
               .map((item) => (
                 <li key={item.title}>
                   <label>
-                    <input type='checkbox' name={item.title} onChange={(e) => handleCheckboxChange(e, 'drink')} checked={selectedItems.drink[item.title] > 0} />
+                    <input type='checkbox' name={item.title} onChange={(e) => handleCheckboxChange(e, "drink")} checked={selectedItems.drink[item.title] > 0} />
                     {item.title}
-                    {selectedItems.drink[item.title] > 0 && <input type='number' name={item.title} onChange={(e) => handleQuantityChange(e, 'drink')} value={selectedItems.drink[item.title] || 0} />}
+                    {selectedItems.drink[item.title] > 0 && <input type='number' name={item.title} onChange={(e) => handleQuantityChange(e, "drink")} value={selectedItems.drink[item.title] || 0} />}
                   </label>
                 </li>
               ))}
@@ -70,9 +70,9 @@ const TableQuestions = ({dataFood, dataDrink, title, onSave}) => {
               .map((item) => (
                 <li key={item.title}>
                   <label>
-                    <input type='checkbox' name={item.title} onChange={(e) => handleCheckboxChange(e, 'food')} checked={selectedItems.food[item.title] > 0} />
+                    <input type='checkbox' name={item.title} onChange={(e) => handleCheckboxChange(e, "food")} checked={selectedItems.food[item.title] > 0} />
                     {item.title}
-                    {selectedItems.food[item.title] > 0 && <input type='number' name={item.title} onChange={(e) => handleQuantityChange(e, 'food')} value={selectedItems.food[item.title] || 0} />}
+                    {selectedItems.food[item.title] > 0 && <input type='number' name={item.title} onChange={(e) => handleQuantityChange(e, "food")} value={selectedItems.food[item.title] || 0} />}
                   </label>
                 </li>
               ))}
