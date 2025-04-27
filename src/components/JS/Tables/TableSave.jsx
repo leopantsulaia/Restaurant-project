@@ -5,18 +5,30 @@ import dataDrink from "../../Data/MenuFood.json";
 import useLocalStorage from "../../UseLocalStorage";
 
 const TableSave = ({id, title, tableNumber}) => {
+
+import useLocalStorage from "../Logic/useLocalStorage";
+
+const TableSave = ({ id, title, tableNumber }) => {
+
   const [saveTapped, setSaveTapped] = useLocalStorage("saveTapped", {});
 
   const handleSave = (selectedFood, selectedDrink) => {
     setSaveTapped((prevSaveTapped) => ({
       ...prevSaveTapped,
-      [tableNumber]: {selectedFood, selectedDrink},
+      [tableNumber]: { selectedFood, selectedDrink },
     }));
   };
 
   return (
     <div id={id}>
-      <TableQuestions dataFood={dataFood} dataDrink={dataDrink} title={title} onSave={handleSave} selectedFood={saveTapped[tableNumber]?.selectedFood} selectedDrink={saveTapped[tableNumber]?.selectedDrink} />
+      <TableQuestions
+        dataFood={dataFood}
+        dataDrink={dataDrink}
+        title={title}
+        onSave={handleSave}
+        selectedFood={saveTapped[tableNumber]?.selectedFood}
+        selectedDrink={saveTapped[tableNumber]?.selectedDrink}
+      />
     </div>
   );
 };
