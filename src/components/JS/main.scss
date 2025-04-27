@@ -3,18 +3,126 @@
   margin: 40px;
   width: 200px;
   height: 200px;
-  background-color: green;
+  background: linear-gradient(135deg, #c0392b 0%, #ff6a00 60%, #8e24aa 100%);
+  color: #fff;
   text-align: center;
   font-weight: bold;
   font-size: 30px;
+  border: none;
 }
 .btn-dlt {
   order: 1;
   margin: auto;
   width: 200px;
   height: 100px;
-  background-color: red;
+  background: linear-gradient(135deg, #c0392b 0%, #ff6a00 60%, #8e24aa 100%);
+  color: #fff;
   text-align: center;
   font-weight: bold;
   font-size: 30px;
+  border: none;
+}
+.create-table-btn {
+  background: rgba(60, 20, 0, 0.18);
+  border: none;
+  border-radius: 32px;
+  box-shadow: 0 8px 32px 0 rgba(120, 30, 60, 0.35);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  width: 240px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.18s cubic-bezier(0.4, 2, 0.6, 1),
+    box-shadow 0.18s cubic-bezier(0.4, 2, 0.6, 1),
+    background 0.18s cubic-bezier(0.4, 2, 0.6, 1), color 0.18s;
+  cursor: pointer;
+  letter-spacing: 1.5px;
+  border: 2px solid #ff6a00;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(135deg, #c0392b 0%, #ff6a00 60%, #8e24aa 100%);
+    opacity: 0.85;
+    transition: opacity 0.2s;
+    border-radius: 32px;
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  }
+
+  &:hover,
+  &:focus {
+    transform: translateY(-10px) scale(1.07) rotate(-2deg);
+    box-shadow: 0 16px 48px 0 rgba(200, 55, 120, 0.35),
+      0 1.5px 8px 0 rgba(255, 106, 0, 0.18);
+    color: #fff;
+    outline: none;
+
+    &::before {
+      opacity: 1;
+      background: linear-gradient(
+        135deg,
+        #8e24aa 0%,
+        #ff6a00 60%,
+        #c0392b 100%
+      );
+    }
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+@media (max-width: 600px) {
+  .create-table-btn {
+    width: 140px;
+    height: 140px;
+    font-size: 1.2rem;
+  }
+}
+
+.tables-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  justify-items: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.mid-rightSide,
+.home-center {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, #6d2323 0%, #b34700 60%, #4b185a 100%);
+  box-shadow: 0 8px 32px 0 rgba(60, 10, 30, 0.25);
+  padding: 0;
+  border-radius: 0;
+  backdrop-filter: blur(0.5px) saturate(120%);
+  -webkit-backdrop-filter: blur(0.5px) saturate(120%);
+  /* Change gradient direction so magenta is in the right up */
+  background: linear-gradient(60deg, #6d2323 0%, #b34700 60%, #4b185a 100%);
 }

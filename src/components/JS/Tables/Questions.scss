@@ -7,24 +7,57 @@
   }
   ul {
     list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+
     li {
       font-size: 1.2rem;
-      text-decoration: none;
       display: flex;
       align-items: center;
-      justify-content: center;
-      input[type='checkbox'] {
-        margin-right: 10px;
+      justify-content: flex-start;
+      background: linear-gradient(90deg, #c0392b 0%, #ff6a00 80%, #8e24aa 100%);
+      color: #ffeaa7;
+      border-radius: 12px;
+      margin: 0.5rem 0;
+      padding: 0.7rem 1.2rem;
+      box-shadow: 0 1px 8px 0 rgba(140, 30, 80, 0.12);
+      border: 1.5px solid #ff6a00;
+      transition: background 0.2s, color 0.2s;
+
+      &:hover {
+        background: linear-gradient(
+          90deg,
+          #8e24aa 0%,
+          #ff6a00 60%,
+          #c0392b 100%
+        );
+        color: #fff;
+      }
+
+      input[type="checkbox"] {
+        margin-right: 14px;
         transform: scale(1.5);
+        accent-color: #ff6a00;
         &:checked {
           + span {
             text-decoration: line-through;
+            color: #b34700;
           }
         }
       }
-      input[type='number'] {
-        margin-left: 10px;
-        background-color: white;
+      input[type="number"] {
+        margin-left: 12px;
+        background-color: #fff;
+        color: #c0392b;
+        border-radius: 6px;
+        border: 1px solid #ff6a00;
+        padding: 2px 8px;
+        font-size: 1rem;
+        width: 60px;
+        box-shadow: 0 1px 4px 0 rgba(140, 30, 80, 0.08);
+        &:focus {
+          outline: 2px solid #8e24aa;
+        }
         &::-webkit-inner-spin-button,
         &::-webkit-outer-spin-button {
           -webkit-appearance: none;
@@ -39,13 +72,13 @@
         }
         &::-webkit-inner-spin-button:before,
         &::-webkit-outer-spin-button:before {
-          content: '▲';
+          content: "▲";
           display: block;
           text-align: center;
         }
         &::-webkit-inner-spin-button:after,
         &::-webkit-outer-spin-button:after {
-          content: '▼';
+          content: "▼";
           display: block;
           text-align: center;
         }
@@ -53,14 +86,25 @@
     }
   }
   button {
-    background-color: green;
-    color: white;
+    background: linear-gradient(135deg, #c0392b 0%, #ff6a00 60%, #8e24aa 100%);
+    color: #fff;
     padding: 10px 20px;
     font-size: 1.2rem;
     border-radius: 5px;
-    cursor:pointer
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px 0 rgba(120, 30, 60, 0.18);
+
     &:hover {
-      opacity: 0.8;
+      opacity: 0.9;
+      background: linear-gradient(
+        135deg,
+        #8e24aa 0%,
+        #ff6a00 60%,
+        #c0392b 100%
+      );
+      color: #ffeaa7;
     }
   }
 }
